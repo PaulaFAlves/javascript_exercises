@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate your grade</title>
+</head>
+<body>
+    <p>Write your first grade: </p>
+    <input id="first_grade" type="number">
+    <p>Write your second grade: </p>
+    <input id="second_grade" type="number">
+    <button onclick= 'calculateAverage()'>Calcular</button>
+    <script type="text/javascript">
+        function calculateAverage() { 
+            var first_grade = parseFloat(document.getElementById('first_grade').value);
+            var second_grade = parseFloat(document.getElementById('second_grade').value);
+            if ((first_grade > 10 || first_grade < 0 ) || (second_grade > 10 || second_grade < 0)) {
+                alert('Write a valid number!');
+                document.getElementById('first_grade').value = '';
+                document.getElementById('second_grade').value = '';
+            } else {
+                var average = (first_grade + second_grade) / 2
+                switch (true) {
+                    case average == 10:
+                        alert('Approved with distinction.');
+                        break;
+                    case average >= 7:
+                        alert('Approved');
+                        break;
+                    case average < 7:
+                        alert('Failed');
+                }
+            }
+        }
+    </script>
+</body>
+</html>

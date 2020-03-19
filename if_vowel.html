@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Vogal</title>
+</head>
+<body>
+    <h1>Digite uma letra: </h1>
+    <input id="letter" type="text">
+    <button onclick="check()">Checar</button>
+
+    <script>
+        function check() {
+            var letter = document.getElementById('letter').value;
+            letter = letter.toLowerCase();
+            switch (true) {
+                case 'aeiou'.includes(letter):
+                    alert('Vogal')
+                    document.getElementById('letter').value = '';
+                    break;
+                default:
+                    alert('Consoante')
+                    document.getElementById('letter').value = '';
+            }
+        }
+    </script>
+    
+</body>
+</html>
